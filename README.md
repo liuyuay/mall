@@ -1,6 +1,8 @@
 # mall
 
-> A Vue.js project
+> This is my first Vue Project,
+> this is a mall for test,
+> and this is my first Project push to Github.
 
 ## Build Setup
 

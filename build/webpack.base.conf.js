@@ -22,32 +22,36 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
+    // 配置webpack编译入口
     app: './src/main.js'
   },
-  output: {
+  output: {// 配置webpack输出路径和命名规则
+    // webpack输出的目标文件夹路径（例如：/dist）
     path: config.build.assetsRoot,
-    filename: '[name].js',
+    //assetsRoot引用自config/index.js文件-build属性中assetsRoot: path.resolve(__dirname, '../dist')
+    filename: '[name].js',// 输出文件命名格式，基于文件的md5生成Hash名称的script来防止缓存
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
-  resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
+  resolve: {//resolve解析
+    extensions: ['.js', '.vue', '.json'],//require或import时可以不加文件扩展名，自动添加扩展名进行匹配
+    alias: {//配置别名，import或require时可以用别名，加快webpack查找模块的速度
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'styles': resolve('src/assets/styles')
     }
   },
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
-        test: /\.vue$/,
+        test: /\.vue$/,//使用vue-loader解析.vue文件
         loader: 'vue-loader',
         options: vueLoaderConfig
       },
       {
-        test: /\.js$/,
+        test: /\.js$/,//使用babel-loader解析.js文件
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },

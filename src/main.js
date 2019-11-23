@@ -6,6 +6,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import vueResource from 'vue-resource'
+import 'styles/reset.css'
+import 'styles/border.css'
+import 'lib-flexible/flexible.js'
 
 Vue.use(ElementUI)
 Vue.use(vueResource)

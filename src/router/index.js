@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import one from '@/components/One.vue'
-import Picture from '@/components/image.vue'
-import main from '@/components/main.vue'
-import Blog from '@/components/blog.vue'
-import test from '@/view/test.vue'
-import title1 from '@/view/title1.vue'
-import title2 from '@/view/title2.vue'
+import one from '@/components/One'
+import Picture from '@/components/image'
+import main from '@/components/main'
+import Blog from '@/components/blog'
+import test from '@/view/test'
+import title1 from '@/view/title1'
+import title2 from '@/view/title2'
 import Goods from '@/view/goods'
+import Home from '@/view/home'
 
 Vue.use(Router)
 
@@ -15,7 +16,7 @@ export default new Router({
   // 定义路由
   routes: [{
     path: '*',
-    redirect: '/main'
+    redirect: '/home'
   }, {
     path: '/one',
     name: 'one',
@@ -54,5 +55,9 @@ export default new Router({
     path: '/goods',
     name: 'goods',
     component: Goods
+  }, {
+    path: '/home',
+    name: 'home',
+    component: Home
   }]
 })

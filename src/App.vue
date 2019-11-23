@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header></Header>
+<!--    <Header></Header>-->
     <br/>
     <!--  路由出口  -->
     <router-view></router-view>

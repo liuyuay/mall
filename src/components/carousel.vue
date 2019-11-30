@@ -1,6 +1,6 @@
 <template>
     <div class="myCarousel">
-      <el-carousel :swiperData='swiperData' indicator-position="outside" height="600px">
+      <el-carousel :swiperData='swiperData' height="800px">
         <el-carousel-item v-for="(item,index) in swiperData" :key="index">
           <img :src="item" class="image">
         </el-carousel-item>

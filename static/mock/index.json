@@ -2,7 +2,10 @@
   "code": 0,
   "msg": "",
   "swiper": [
-    "/static/image/a.jpg",
-    "/static/image/b.jpg"
+    "https://liuyuay.oss-cn-hangzhou.aliyuncs.com/picture/a.jpg",
+    "https://liuyuay.oss-cn-hangzhou.aliyuncs.com/picture/b.jpg",
+    "https://liuyuay.oss-cn-hangzhou.aliyuncs.com/picture/c.jpg",
+    "https://liuyuay.oss-cn-hangzhou.aliyuncs.com/picture/d.jpg",
+    "https://liuyuay.oss-cn-hangzhou.aliyuncs.com/picture/e.jpg"
   ]
 }

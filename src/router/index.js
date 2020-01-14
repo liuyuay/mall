@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import Router from 'vue-router'
 import one from '@/components/One'
 import Picture from '@/components/image'
@@ -9,8 +10,10 @@ import title1 from '@/view/title1'
 import title2 from '@/view/title2'
 import Goods from '@/view/goods'
 import Home from '@/view/home'
+import login from '@/components/login'
 
 Vue.use(Router)
+Vue.use(Vuex)
 
 export default new Router({
   // 定义路由
@@ -59,5 +62,9 @@ export default new Router({
     path: '/home',
     name: 'home',
     component: Home
+  }, {
+    path: '/login',
+    name: 'login',
+    component: login
   }]
 })

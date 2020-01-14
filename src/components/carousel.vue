@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   name: 'carousel',
   data () {
@@ -39,19 +39,20 @@ export default {
       //   })
 
       // 方法二
-      axios.get('/api/index.json').then(res => {
-        console.log(res)
-        this.swiperData = res.data.swiper
-        console.log(this.swiperData)
-      })
+      // axios.get('/api/index.json').then(res => {
+      //   console.log(res)
+      //   this.swiperData = res.data.swiper
+      //   console.log(this.swiperData)
+      // })
 
       // 方法三
-      // this.$http.get('/api/index.json',
-      //   {params: {}}
-      // ).then(function (res) {
-      //   this.swiperData = res.data.swiper
-      // }).catch(function () {
-      // })
+      this.$http.get('/api/index.json',
+        {params: {}}
+      ).then(function (res) {
+        this.swiperData = res.data.swiper
+        console.log(res.data.swiper)
+      }).catch(function () {
+      })
     }
   }
 }

@@ -20,6 +20,16 @@ module.exports = {
           '^/api': '/static/mock'
         }
       }
+      // '/apis': {
+      //   // 要代理的域名
+      //   target: 'http://localhost:8082',
+      //   //允许跨域
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     // 这个是定义要访问的路径，名字随便写
+      //     '^/apis': ''
+      //   }
+      // }
     },
 
     // Various Dev Server settings

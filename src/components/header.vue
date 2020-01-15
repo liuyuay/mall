@@ -23,8 +23,50 @@
       <el-menu-item index="/Card">MyCard</el-menu-item>
       <el-menu-item index="/Blog">Blog</el-menu-item>
       <el-menu-item index="/Home">Home</el-menu-item>
-      <el-menu-item index="/login">Login</el-menu-item>
+      <el-menu-item @click="registerDialogForm = true">注册</el-menu-item>
+      <el-menu-item @click="loginDialogForm = true">登录</el-menu-item>
     </el-menu>
+    <el-dialog
+      title="登录"
+      :visible.sync="loginDialogForm"
+      width="26%">
+      <el-form :model="form">
+        <el-form-item label="用户名" :label-width="formLabelWidth">
+          <el-input v-model="form.username" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="密码" :label-width="formLabelWidth" prop="pass">
+          <el-input type="password" v-model="form.password" autocomplete="off"></el-input>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="loginDialogForm = false">取 消</el-button>
+        <el-button type="primary" @click="loginDialogForm = false">确 定</el-button>
+      </div>
+    </el-dialog>
+    <el-dialog
+      title="注册"
+      :visible.sync="registerDialogForm"
+      width="26%">
+      <el-form :model="regForm">
+        <el-form-item label="手机号" :label-width="formLabelWidth">
+          <el-input v-model="regForm.mobile" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="验证码" :label-width="formLabelWidth">
+          <el-input v-model="regForm.code" style="width: 100%;" autocomplete="off"></el-input>
+          <el-button type="primary" size="medium" round="true" plain>获取验证码</el-button>
+        </el-form-item>
+        <el-form-item label="昵称" :label-width="formLabelWidth">
+          <el-input v-model="regForm.showname" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="密码" :label-width="formLabelWidth" prop="pass">
+          <el-input type="password" v-model="form.password" autocomplete="off"></el-input>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="registerDialogForm = false">取 消</el-button>
+        <el-button type="primary" @click="registerDialogForm = false">确 定</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -46,7 +88,19 @@ export default {
         {name: '/communityActivity', navItem: '带快捷选项'},
         {name: '/publishProject', navItem: '时间选择不带禁用效果'}
       ],
-      activeIndex: '1'
+      activeIndex: '1',
+      loginDialogForm: false,
+      registerDialogForm: false,
+      form: {
+        username: '',
+        password: ''
+      },
+      regForm: {
+        mobile: '',
+        code: '',
+        showname: ''
+      },
+      formLabelWidth: '120px'
     }
   },
   methods: {

@@ -14,12 +14,12 @@ module.exports = {
       //本地数据mock
       //（1）当你请求/api的时候，转发到http://localhost:8081这台端口号为8081的服务器上；
       //（2）一旦你请求是以/api开头的，就把它替换为/static/mock这个路径；
-      '/api': {
-        target: 'http://localhost:8081',
-        pathRewrite: {
-          '^/api': '/static/mock'
-        }
-      }
+      // '/api': {
+      //   target: 'http://49.234.102.27/:8080/blog/api/',
+      //   pathRewrite: {
+      //     '^/api': '/'
+      //   }
+      // }
       // '/apis': {
       //   // 要代理的域名
       //   target: 'http://localhost:8082',
@@ -35,7 +35,7 @@ module.exports = {
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     //配置启动端口
-    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 80, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
@@ -54,8 +54,8 @@ module.exports = {
      */
 
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
-
+    // devtool: 'cheap-module-eval-source-map',
+    devtool: '#eval-source-map ',
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help
     // https://vue-loader.vuejs.org/en/options.html#cachebusting

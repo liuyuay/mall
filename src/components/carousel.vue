@@ -13,6 +13,7 @@
 
 <script>
 // import axios from 'axios'
+// import { getCarousel } from '@/api/home.js'
 export default {
   name: 'carousel',
   data () {
@@ -39,18 +40,20 @@ export default {
       //   })
 
       // 方法二
-      // axios.get('/api/index.json').then(res => {
+      // axios.get('http://49.234.102.27/:8080/blog/api/carousel/get_all').then(res => {
       //   console.log(res)
-      //   this.swiperData = res.data.swiper
-      //   console.log(this.swiperData)
+      //   var imageList = res.data.data
+      //   console.log(imageList)
       // })
 
       // 方法三
-      this.$http.get('/api/index.json',
+      this.$http.get('https://api.liuyuay.cn/api/carousel/get_all',
         {params: {}}
       ).then(function (res) {
-        this.swiperData = res.data.swiper
-        console.log(res.data.swiper)
+        var imageList = res.data.data
+        for (var i = 0; i < imageList.length; i++) {
+          this.swiperData.push(imageList[i].imageUrl)
+        }
       }).catch(function () {
       })
     }

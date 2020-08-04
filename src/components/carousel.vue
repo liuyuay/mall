@@ -47,7 +47,7 @@ export default {
       // })
 
       // 方法三
-      this.$http.get('https://api.liuyuay.cn/api/carousel/get_all',
+      this.$http.get('https://api.liuyuay.cn/blog/api/carousel/get_all',
         {params: {}}
       ).then(function (res) {
         var imageList = res.data.data

@@ -9,9 +9,12 @@ import vueResource from 'vue-resource'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'lib-flexible/flexible.js'
+// import { mavonEditor } from 'mavon-editor'
+// import 'mavon-editor/dist/css/index.css'
 
 Vue.use(ElementUI)
 Vue.use(vueResource)
+// Vue.use(mavonEditor)
 Vue.config.productionTip = false
 // vue-resource发送post请求，要在这里进行配置，否则后台接收不到参数
 // Vue.http.options.emulateJSON = true

@@ -1,34 +1,16 @@
 <template>
-  <el-button
-    plain
-    @click="open1">
-    获取一言
-  </el-button>
+  <div>
+    <mavon-editor style="height: 600px"></mavon-editor>
+  </div>
 </template>
 
 <script>
+import { mavonEditor } from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 export default {
-  name: 'One',
-  methods: {
-    open1 () {
-      this.$http.get('https://v1.hitokoto.cn',
-        {params: {
-        }}
-      ).then(function (resp) {
-        console.log(resp.data)
-        this.$notify({
-          title: '一言',
-          dangerouslyUseHTMLString: true,
-          message: resp.data.hitokoto + '<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---' + resp.data.from,
-          showClose: false
-        })
-      })
-    }
+  name: 'Markdown',
+  components: {
+    mavonEditor
   }
 }
 </script>
-
-<style scoped>
-
-</style>
